@@ -1,0 +1,21 @@
+//----------------------------------------
+//-----------POST REQUESTS----------------
+//----------------------------------------
+###
+//Get me the home page
+GET http://localhost:3000/
+
+
+###
+//Get me the posts page
+GET http://localhost:3000/post
+
+
+###
+//Get me a post by a specific sender
+GET http://localhost:3000/post?sender=Amit
+
+###
+//Get me a post by a specific id
+GET http://localhost:3000/post/675ae4e891dc1be392f28a6b
+
