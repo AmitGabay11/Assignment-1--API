@@ -27,6 +27,24 @@ const getPostById=async (req,res)=>{
         
 };
 
+const createNewPost= async (req,res)=>{
+        const post=req.body;
+        try{
+         const newPost= await postModel.create(post);
+         res.status(201).send(newPost);
+        } catch(error){
+            res.status(400).send(error);
+        }     
+ };
 
+ const deletePost=async (req,res)=>{
+        const postId=req.params.id;
+        try{
+                const rs = await postModel.findByIdAndDelete(postId);
+                res.status(200).send("Post deleted successfully");
+        }catch(error){
+                res.status(400).send(error.message);
+        }
+};
 
-module.exports={getAllPosts,getPostById};
+module.exports={getAllPosts,getPostById, createNewPost,deletePost};

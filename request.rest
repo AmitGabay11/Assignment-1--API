@@ -13,9 +13,24 @@ GET http://localhost:3000/post
 
 ###
 //Get me a post by a specific sender
-GET http://localhost:3000/post?sender=Amit
+GET http://localhost:3000/post?sender=Yotamaaa
 
 ###
 //Get me a post by a specific id
-GET http://localhost:3000/post/675ae4e891dc1be392f28a6b
+GET http://localhost:3000/post/675ac7adf19ce8b0f83da923
+
+###
+//Post a new post (stored in DB)
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "sender": "Yotamaaa",
+  "title": "My new post",
+  "content": "This is my first post"
+}
+
+###
+//Delete post by id number
+DELETE http://localhost:3000/post/675ae6c391dc1be392f28a7d
 
