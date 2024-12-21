@@ -37,4 +37,22 @@ const getCommentByCommentId = async (req, res) => {
     }   
 };  
 
-module.exports = { getAllCommentsByPostId, createNewComment, getCommentByCommentId };
+const updateComment = async (req, res) => {
+    const commentId = req.params.id; // Extract comment ID from request parameters
+    const { content } = req.body; // Extract updated content from request body
+
+    try {
+        // Update the comment by ID and return the updated document
+        const updatedComment = await commentModel.findByIdAndUpdate(  commentId,{ content },{ new: true }); 
+        // Check if the comment was found and updated
+        if (!updatedComment) {
+            return res.status(404).send("Comment not found");
+        }
+        // Send the updated comment as a response
+        res.status(200).send(updatedComment);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
+
+module.exports = { getAllCommentsByPostId, createNewComment, getCommentByCommentId, updateComment };
