@@ -1,21 +1,39 @@
 //----------------------------------------
 //-----------POST REQUESTS----------------
 //----------------------------------------
-###
-//Get me the home page
+
+### Get the home page
 GET http://localhost:3000/
 
-
-###
-//Get me the posts page
+### Get all posts
 GET http://localhost:3000/post
 
-
-###
-//Get me a post by a specific sender
+### Get posts by a specific sender
 GET http://localhost:3000/post?sender=Amit
 
-###
-//Get me a post by a specific id
-GET http://localhost:3000/post/675ae4e891dc1be392f28a6b
+### Get a post by a specific ID
+GET http://localhost:3000/post/67608a83313608471a6804fa
+
+### Create a new post
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "sender": "Amit",
+  "title": "My new post",
+  "content": "This is my first post"
+}
+
+### Update an existing post
+PUT http://localhost:3000/post/67608a83313608471a6804fa
+Content-Type: application/json
+
+{
+  "title": "Updated Post Title",
+  "content": "Updated content for the post",
+  "sender": "Yotamaaa"
+}
+
+### Delete a post by ID
+DELETE http://localhost:3000/post/675ae6c391dc1be392f28a7d
 
