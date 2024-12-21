@@ -27,7 +27,7 @@ Content-Type: application/json
 {
   "sender": "Yotamaaa",
   "title": "My new post",
-  "content": "This is my first post"
+  "content": "This is my first posta"
 }
 
 ###
