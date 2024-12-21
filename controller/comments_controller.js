@@ -55,4 +55,20 @@ const updateComment = async (req, res) => {
     }
 };
 
-module.exports = { getAllCommentsByPostId, createNewComment, getCommentByCommentId, updateComment };
+const deleteComment = async (req, res) => { 
+    const commentId = req.params.id; 
+    try { 
+        const rs = await commentModel.findByIdAndDelete(commentId); 
+        res.status(200).send("Comment deleted successfully");
+    }   
+    catch (error) { 
+        res.status(400).send(error.message);
+    }   
+};
+
+
+module.exports = { getAllCommentsByPostId
+    , createNewComment
+    , getCommentByCommentId
+    , updateComment
+    , deleteComment };
