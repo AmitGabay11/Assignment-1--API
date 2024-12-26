@@ -26,7 +26,9 @@ app.use(express.urlencoded({ extended: true })); // For parsing URL-encoded data
 const postsRoutes = require('./routes/posts_routes');  // Import the posts_routes.js file
 app.use('/post',postsRoutes);  // Use the posts_routes.js file for the /posts route
 
-
+//----COMMENT ROUTES----
+const commentsRoutes = require('./routes/comments_routes');  // Import the comments_routes.js file  
+app.use('/comment',commentsRoutes);  // Use the comments_routes.js file for the /comments route
 
 //Home page route
 app.get('/',(req,res)=>{  // Define the route for the home page

@@ -21,19 +21,29 @@ Content-Type: application/json
 {
   "sender": "Amit",
   "title": "My new post",
-  "content": "This is my first post"
+  "content": "This is my first posta"
 }
 
 ### Update an existing post
-PUT http://localhost:3000/post/67608a83313608471a6804fa
+PUT http://localhost:3000/post/676692678a660edbfa92fb28
 Content-Type: application/json
 
 {
   "title": "Updated Post Title",
   "content": "Updated content for the post",
-  "sender": "Yotamaaa"
+  "sender": "Yotamaaaaa"
 }
 
 ### Delete a post by ID
 DELETE http://localhost:3000/post/675ae6c391dc1be392f28a7d
+
+
+//----------------------------------------
+//-------COMMENTS REQUEST-----------------
+//----------------------------------------  
+
+###
+//Get me all comments
+GET http://localhost:3000/comment
+
 
