@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 
 ### Update an existing post
-PUT http://localhost:3000/post/676692678a660edbfa92fb28
+PUT http://localhost:3000/post/676cb16a663daa4951a521d9
 Content-Type: application/json
 
 {
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### Delete a post by ID
-DELETE http://localhost:3000/post/675ae6c391dc1be392f28a7d
+DELETE http://localhost:3000/post/676cb16a663daa4951a521d9
 
 
 //----------------------------------------
@@ -47,3 +47,34 @@ DELETE http://localhost:3000/post/675ae6c391dc1be392f28a7d
 GET http://localhost:3000/comment
 
 
+###
+//Get comment by comment id 
+GET http://localhost:3000/comment/676cb4ab663daa4951a521ed
+
+###
+//Get all comments of a post by post id
+GET http://localhost:3000/comment?postId=675ac7adf19ce8b0f83da925
+
+### 
+//Create a new comment (stored in DB)
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+  "author": "Yotam",
+  "content": "Second commment on this post",
+  "postId": "675ac7adf19ce8b0f83da925"
+}
+
+###
+//Update comment by comment id
+PUT http://localhost:3000/comment/675ae53391dc1be392f28a6f
+Content-Type: application/json
+
+{
+  "content": "Updated comment on this post"
+}
+
+###
+//Delete comment by comment id 
+DELETE http://localhost:3000/comment/676cb489663daa4951a521e5
